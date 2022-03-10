@@ -24,7 +24,7 @@ F2 = [
 ]
 
 headers = [
-    's.no',
+    'index',
     'file_name',
     'chroma_stft',
     'spectral_centroid',
