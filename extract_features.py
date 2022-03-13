@@ -126,21 +126,17 @@ def GetFeatureVector2(feature_func, y):
     ]
 
 
-def SaveFeatures(type, out):
+def SaveFeatures(out):
     f = open(out, 'w+', newline='')
     writer = csv.writer(f, delimiter=',')
     writer.writerow(GetHeaders())
     for i in range(len(U.GENRES)):
         Files = U.FILES[i]
-        if type == 'train':
-            Files = Files[:80]
-        else:
-            Files = Files[80:]
 
         for File in Files:
             print('Extracting: ', File)
             writer.writerow(ExtractFeatures(File, U.GENRES[i]))
 
 
-# SaveFeatures('train', U.CSV_TRAIN)
+SaveFeatures(U.CSV)
 # SaveFeatures('test', U.CSV_TEST)

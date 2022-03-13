@@ -10,6 +10,9 @@ CSV_TRAIN = f'D:\\Datasets\\GTZAN\\GTZAN_TRAIN.csv'
 # Output File Path for Testing Data
 CSV_TEST = f'D:\\Datasets\\GTZAN\\GTZAN_TEST.csv'
 
+# CSV File for Combined File
+CSV = f'D:\\Datasets\\GTZAN\\GTZAN.csv'
+
 # Getting Labels or Genre Types
 GENRES = listdir(DATA_PATH)
 
