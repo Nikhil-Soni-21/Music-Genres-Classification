@@ -1,23 +1,20 @@
 from os import listdir
 from random import randint
 
-# Path of the Audio Files
-DATA_PATH = 'D:\\Datasets\\GTZAN\\genres'
+DATA_PATH_30SEC = 'D:\\Datasets\\GTZAN\\30SEC'
 
-# Output File Path for Training Data
-CSV_TRAIN = f'D:\\Datasets\\GTZAN\\GTZAN_TRAIN.csv'
+CSV_30SEC = f'{DATA_PATH_30SEC}\\GTZAN.csv'
 
-# Output File Path for Testing Data
-CSV_TEST = f'D:\\Datasets\\GTZAN\\GTZAN_TEST.csv'
+DATA_PATH_3SEC = 'D:\\Datasets\\GTZAN\\3SEC'
 
-# CSV File for Combined File
-CSV = f'D:\\Datasets\\GTZAN\\GTZAN.csv'
+CSV_3SEC = f'{DATA_PATH_3SEC}\\GTZAN.csv'
 
-# Getting Labels or Genre Types
-GENRES = listdir(DATA_PATH)
+GENRES = listdir(f'{DATA_PATH_30SEC}\\genres')
 
-# Listing All Files of Each Genre as a 2-D List
-FILES = [listdir(f'{DATA_PATH}\\{x}') for x in GENRES]
+FILES_30SEC = [listdir(f'{DATA_PATH_30SEC}\\genres\\{x}') for x in GENRES]
 
-# Contains 10 Random Files from Each Genre for testing Purpose
-SAMPLE_FILES = [x[randint(0, 99)] for x in FILES]
+SAMPLE_FILES_30SEC = [x[randint(0, 99)] for x in FILES_30SEC]
+
+FILES_3SEC = [listdir(f'{DATA_PATH_3SEC}\\genres\\{x}') for x in GENRES]
+
+SAMPLE_FILES_3SEC = [x[randint(0, 999)] for x in FILES_3SEC]
