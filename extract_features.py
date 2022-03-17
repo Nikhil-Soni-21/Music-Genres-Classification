@@ -6,7 +6,8 @@ import librosa
 import csv
 import utils as U
 
-DATA_PATH = U.DATA_PATH_30SEC
+DATA_PATH = U.DATA_PATH_3SEC
+FILES = U.FILES_3SEC
 
 
 # Return feature row that contain all features of an audio file.
@@ -133,11 +134,11 @@ def SaveFeatures(out):
     writer = csv.writer(f, delimiter=',')
     writer.writerow(GetHeaders())
     for i in range(len(U.GENRES)):
-        Files = U.FILES_30SEC[i]
+        Files = FILES[i]
 
         for File in Files:
             print('Extracting: ', File)
             writer.writerow(ExtractFeatures(File, U.GENRES[i]))
 
 
-SaveFeatures(U.CSV_30SEC)
+SaveFeatures(U.CSV_3SEC)
